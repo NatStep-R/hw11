@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% if number_of_candidates > 0 %}
+    <h1>Найдено кандидатов {{ number_of_candidates }}</h1>
+    {% for candidate in needed_candidates %}
+      <p><a href="/candidate/{{ candidate.id }}/">{{ candidate.name }}</a></p>
+    {% endfor %}
+{% else %}
+    <p>Кандидата нет в базе</p>
+{% endif %}
+</body>
+</html>
+
